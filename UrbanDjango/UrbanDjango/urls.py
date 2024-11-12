@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from task2.views import func_template, class_template
+from django.shortcuts import redirect
+from task3.views import platform, shop, cart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', func_template),
-    path('func_template/', class_template.as_view())
+    path('', lambda request: redirect('platform/')),
+    path('platform/', platform),
+    path('platform/shop/', shop),
+    path('platform/cart/', cart),
 ]
