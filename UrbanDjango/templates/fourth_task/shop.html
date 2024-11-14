@@ -1,0 +1,15 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}
+<h1>{{ text }}</h1>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for product in products %}
+    <li>{{ product }} <button>{{ text4 }}</button>  <a href="/platform/cart"><button>{{ text6 }}</button></a></li>
+    <br>
+    {% endfor %}
+</ul>
+<a href="/platform"><button>{{ text5 }}</button></a>
+{% endblock %}
