@@ -17,12 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import redirect
-from task4.views import platform, shop, cart
+# from task4.views import platform, shop, cart
+from task5.views import sign_up_by_html, sign_up_by_django
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('platform/')),
-    path('platform/', platform),
-    path('platform/shop/', shop),
-    path('platform/cart/', cart),
+    path('', sign_up_by_html),
+    path('django_sign_up/', sign_up_by_django)
+
 ]
+
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', lambda request: redirect('platform/')),
+#     path('platform/', platform),
+#     path('platform/shop/', shop),
+#     path('platform/cart/', cart),
+# ]
